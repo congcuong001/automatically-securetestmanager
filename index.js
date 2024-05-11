@@ -1,14 +1,4 @@
-function productExceptSelf(nums) {
-  const result = [];
-  let product = 1;
-  for (let i = 0; i < nums.length; i++) {
-    result[i] = product;
-    product *= nums[i];
-  }
-  product = 1;
-  for (let i = nums.length - 1; i >= 0; i--) {
-    result[i] *= product;
-    product *= nums[i];
-  }
-  return result;
-}
+const dropRightWhile = (arr, func) => {
+  while (arr.length > 0 && !func(arr[arr.length - 1])) arr = arr.slice(0, -1);
+  return arr;
+};
