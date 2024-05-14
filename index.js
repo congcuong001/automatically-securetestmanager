@@ -1,9 +1,9 @@
-function maxProfit(prices) {
-  let minPrice = Infinity;
-  let maxProfit = 0;
-  for (const price of prices) {
-    minPrice = Math.min(minPrice, price);
-    maxProfit = Math.max(maxProfit, price - minPrice);
+function getIntersectionNode(headA, headB) {
+  let currA = headA;
+  let currB = headB;
+  while (currA !== currB) {
+    currA = currA ? currA.next : headB;
+    currB = currB ? currB.next : headA;
   }
-  return maxProfit;
+  return currA;
 }
